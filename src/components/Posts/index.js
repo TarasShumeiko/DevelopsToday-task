@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
+import Posts from './Posts';
 import { connect } from 'react-redux';
 import { fetchPostsThunk } from '../../store/slices/posts/actions';
 import { selectPosts } from '../../store/slices/posts/selectors';
-import Posts from './Posts';
 
 class PostsContainer extends Component {
   componentDidMount() {
     const { fetchPostsThunk } = this.props;
-    fetchPostsThunk()
+    fetchPostsThunk();
   }
 
   render() {
@@ -27,7 +27,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = {
-  fetchPostsThunk,
+  fetchPostsThunk
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostsContainer);

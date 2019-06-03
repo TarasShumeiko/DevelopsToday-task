@@ -1,16 +1,18 @@
-import { CREATE_COMMENT_SUCCESS, CREATE_COMMENT_ERROR } from './actions';
+import { FETCH_COMMENTS } from './actions';
 
-// reducer
-const initialState = {
+const INITIAL_STATE = {
   comments: []
 };
 
-const comments = (state = initialState, action) => {
-  switch (action.type) {
+const comments = (state = INITIAL_STATE, action) => {
+  const { type, payload } = action;
 
-    case CREATE_COMMENT_SUCCESS:
-      return [action.payload]
+  switch (type) {
+    case FETCH_COMMENTS:
+      return { comments: payload };
 
+    default:
+      return state;
   }
 };
 

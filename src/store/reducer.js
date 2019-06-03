@@ -4,11 +4,9 @@ import post from './slices/post';
 import comments from './slices/comments';
 
 const rootReducer = combineReducers({
-  posts
+  posts,
+  post,
+  comments
 });
 
 export default rootReducer;
-
-// ,
-// post,
-//   comments

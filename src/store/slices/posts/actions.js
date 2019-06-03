@@ -5,11 +5,10 @@ export const fetchPosts = (data) => ({
   payload: data,
 });
 
-export function fetchPostsThunk() {
-  return async function(dispatch) {
+export const fetchPostsThunk = () => {
+  return async (dispatch) => {
     const result = await fetch('https://simple-blog-api.crew.red/posts');
     const data = await result.json();
-    const fetchPostsAction = fetchPosts(data);
-    dispatch(fetchPostsAction);
+    dispatch(fetchPosts(data));
   };
-}
+};

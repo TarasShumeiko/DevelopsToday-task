@@ -1,12 +1,12 @@
 import React from 'react';
-import {makeStyles} from "@material-ui/core";
+import {makeStyles} from '@material-ui/core';
 import Container from '@material-ui/core/Container';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import {NavLink} from "react-router-dom";
+import Button from '@material-ui/core/Button';
+import {NavLink} from 'react-router-dom';
 
 const useStyles = makeStyles({
   '@global': {
@@ -39,7 +39,7 @@ const Posts = (props) => {
 
   const posts = props.posts.map(post => {
     return (
-      <Card key={post.id} className={classes.card} maxWidth="sm">
+      <Card key={post.id} className={classes.card} maxwidth="sm">
         <CardContent>
           <Typography className={classes.title} variant="h5" component="h2">
             {post.title}
@@ -55,7 +55,7 @@ const Posts = (props) => {
           </Typography>
         </CardContent>
         <CardActions>
-          <NavLink className={classes.link}>
+          <NavLink className={classes.link} to={`/posts/${post.id}`}>
             <Button
               size="medium"
               variant="contained"

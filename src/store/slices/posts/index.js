@@ -6,9 +6,11 @@ const INITIAL_STATE = {
 
 export default (state = INITIAL_STATE, action) => {
   const { type, payload } = action;
+
   switch (type) {
     case FETCH_POSTS:
       return { posts: payload };
+
     default:
       return state;
   }
